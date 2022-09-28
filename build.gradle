@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'application'
+
 }
 
 group 'com.MiguelFonte.hero'
@@ -16,4 +18,8 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+application {
+    mainClass.set("Application")
 }
