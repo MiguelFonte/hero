@@ -8,6 +8,9 @@ public class Hero {
         position.setX(a);
         position.setY(b);
     }
+    public Position  getPosition(){
+        return position;
+    }
 
 
 
@@ -24,9 +27,7 @@ public class Hero {
     public Position moveLeft() {
         return new Position(position.getX()-1, position.getY());
     }
-    public void draw(Screen screen) {
-        screen.setCharacter(position.getX(), position.getY(), TextCharacter.fromCharacter('X')[0]);
-    }
+
     public void setPosition(Position position) {
         this.position = position;
     };
