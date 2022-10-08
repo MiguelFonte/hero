@@ -6,6 +6,13 @@ public class Position {
         x=a;
         y=b;
     }
+    public boolean equals(Position a){
+        if(x==a.getX()&&y==a.getY()){
+            return true;
+        }
+        return false;
+
+    }
 
     public int getX() {
         return x;
