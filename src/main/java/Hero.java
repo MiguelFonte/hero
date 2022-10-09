@@ -9,10 +9,10 @@ public class Hero extends Element {
     }
 
     @Override
-    public void draw(String cor, String chara, TextGraphics graphics) {
-        graphics.setForegroundColor(TextColor.Factory.fromString(cor));
+    public void draw(TextGraphics graphics) {
+        graphics.setForegroundColor(TextColor.Factory.fromString("#422444"));
         graphics.enableModifiers(SGR.BOLD);
-        graphics.putString(new TerminalPosition(position.getX(), position.getY()), chara);
+        graphics.putString(new TerminalPosition(position.getX(), position.getY()), "X");
     }
 
 
@@ -31,7 +31,4 @@ public class Hero extends Element {
         return new Position(position.getX()-1, position.getY());
     }
 
-    public void setPosition(Position position) {
-        this.position = position;
-    };
 }

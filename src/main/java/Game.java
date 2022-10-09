@@ -35,11 +35,16 @@ public class Game {
     }
 
     public void run() throws IOException {
+        draw();
 
         while (true) {
-            draw();
             KeyStroke key = screen.readInput();
             processKey(key);
+            draw();
+            if(arena.verifyMonsterCollisions()){
+                System.out.println("END GAME");
+                break;
+            }
             if (KeyType.EOF == key.getKeyType()) break;
 
         }
@@ -47,5 +52,6 @@ public class Game {
 
     private void processKey(KeyStroke key) throws IOException {
         arena.processKey(key, screen);
+
     }
 }

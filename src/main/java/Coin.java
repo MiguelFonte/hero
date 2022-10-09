@@ -11,9 +11,9 @@ public class Coin extends Element {
     }
 
     @Override
-    public void draw(String cor, String chara, TextGraphics graphics) {
-        graphics.setForegroundColor(TextColor.Factory.fromString(cor));
+    public void draw(TextGraphics graphics) {
+        graphics.setForegroundColor(TextColor.Factory.fromString("#334433"));
         graphics.enableModifiers(SGR.BOLD);
-        graphics.putString(new TerminalPosition(position.getX(), position.getY()), chara);
+        graphics.putString(new TerminalPosition(position.getX(), position.getY()), "$");
     }
 }

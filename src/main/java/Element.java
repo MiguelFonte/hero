@@ -17,7 +17,11 @@ public abstract class  Element {
 
     }
 
-    public abstract  void draw(String cor, String chara, TextGraphics graphics);
+    public void setPosition(Position position) {
+        this.position = position;
+    }
+
+    public abstract  void draw(TextGraphics graphics);
 
 
 
