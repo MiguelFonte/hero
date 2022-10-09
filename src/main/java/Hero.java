@@ -2,15 +2,17 @@ import com.googlecode.lanterna.*;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
 
-public class Hero {
-    private Position position = new Position(0,0) ;
+public class Hero extends Element {
 
     public Hero (int a,int b){
-        position.setX(a);
-        position.setY(b);
+        super(a,b);
     }
-    public Position  getPosition(){
-        return position;
+
+    @Override
+    public void draw(String cor, String chara, TextGraphics graphics) {
+        graphics.setForegroundColor(TextColor.Factory.fromString(cor));
+        graphics.enableModifiers(SGR.BOLD);
+        graphics.putString(new TerminalPosition(position.getX(), position.getY()), chara);
     }
 
 
@@ -32,10 +34,4 @@ public class Hero {
     public void setPosition(Position position) {
         this.position = position;
     };
-    public void draw(TextGraphics graphics){
-        graphics.setForegroundColor(TextColor.Factory.fromString("#FFFF33"));
-                graphics.enableModifiers(SGR.BOLD);
-        graphics.putString(new TerminalPosition(position.getX(), position.getY()), "X");
-
-    }
 }

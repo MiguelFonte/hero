@@ -66,9 +66,9 @@ public class Arena {
         graphics.setBackgroundColor(TextColor.Factory.fromString("#336699"));
                 graphics.fillRectangle(new TerminalPosition(0, 0), new
                         TerminalSize(width, height), ' ');
-                hero.draw(graphics);
+                hero.draw("#222222", "X",graphics);
         for (Wall wall : walls)
-            wall.draw(graphics);
+            wall.draw("#111111","O",graphics);
     }
 
     private List<Wall> createWalls() {
